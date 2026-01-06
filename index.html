@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A mobile-optimized to-do list app with dark mode">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Main App Container -->
+  <div class="app-container">
+
+    <!-- Header with Dark Mode Toggle -->
+    <header class="app-header">
+      <div class="dark-mode-toggle">
+        <label class="toggle-switch" aria-label="Dark mode toggle">
+          <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <h1>To Do List</h1>
+    </header>
+
+    <!-- Add Task Section -->
+    <section class="add-task-section">
+      <textarea
+        id="taskInput"
+        placeholder="Add a new task..."
+        rows="3"
+        aria-label="New task input"
+        maxlength="1000"
+      ></textarea>
+      <button id="addTaskBtn" class="btn-primary" aria-label="Add task">
+        <span>Add Task</span>
+      </button>
+    </section>
+
+    <!-- Tasks List Section -->
+    <section class="tasks-section">
+      <div id="tasksList" class="tasks-list" role="list">
+        <!-- Tasks will be dynamically inserted here -->
+      </div>
+      <div id="emptyState" class="empty-state">
+        <p>No tasks yet. Add one to get started!</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Context Menu (for Edit/Delete) -->
+  <div id="contextMenu" class="context-menu" role="menu" aria-hidden="true">
+    <button class="menu-item menu-item-edit" id="editTaskBtn" role="menuitem">
+      <span>Edit</span>
+    </button>
+    <button class="menu-item menu-item-delete" id="deleteTaskBtn" role="menuitem">
+      <span>Delete</span>
+    </button>
+    <button class="menu-item menu-item-cancel" id="cancelMenuBtn" role="menuitem">
+      <span>Cancel</span>
+    </button>
+  </div>
+
+  <!-- Backdrop for context menu -->
+  <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
