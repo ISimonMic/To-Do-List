@@ -103,7 +103,7 @@ function addTask(text) {
   const task = createTask(text);
   if (!task) return;
 
-  AppState.tasks.unshift(task); // Add to beginning
+  AppState.tasks.push(task); // Add to end
   saveTasksToLocalStorage();
   renderTasks();
 
